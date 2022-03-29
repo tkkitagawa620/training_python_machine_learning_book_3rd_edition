@@ -1,3 +1,4 @@
+import time
 from random import seed
 import matplotlib.pyplot as plt
 import numpy as np
@@ -338,12 +339,16 @@ nn = NeuralNetMLP(n_hidden=100,
                   minibatch_size=100,
                   shuffle=True,
                   seed=1)
+start_time = time.perf_counter()
 nn.fit(
     X_train=X_train[:55000],
     y_train=y_train[:55000],
     X_valid=X_train[55000:],
     y_valid=y_train[55000:]
 )
+end_time = time.perf_counter()
+elapsed_time = end_time - start_time()
+print('訓練にかかった時間：　%d' % elapsed_time)
 
 plt.plot(range(nn.epochs), nn.eval_['cost'])
 plt.xlabel('epoch')
