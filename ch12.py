@@ -347,7 +347,7 @@ nn.fit(
     y_valid=y_train[55000:]
 )
 end_time = time.perf_counter()
-elapsed_time = end_time - start_time()
+elapsed_time = end_time - start_time
 print('訓練にかかった時間：　%d' % elapsed_time)
 
 plt.plot(range(nn.epochs), nn.eval_['cost'])
