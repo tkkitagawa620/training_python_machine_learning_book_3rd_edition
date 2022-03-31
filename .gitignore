@@ -4,3 +4,4 @@ venv/**
 ## Samples and datasets
 python-machine-learning-book-3rd-edition/**
 aclImdb/**
+celeba/images/**
